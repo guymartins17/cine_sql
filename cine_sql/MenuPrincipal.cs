@@ -12,9 +12,23 @@ namespace cine_sql
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal()
+        Model.Usuario usuario = new Model.Usuario();
+        public MenuPrincipal(Model.Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+        }
+
+        private void btnSessoes_Click(object sender, EventArgs e)
+        {
+            Sessao sessao = new Sessao(usuario);
+            sessao.ShowDialog();
+        }
+
+        private void btnIngressos_Click(object sender, EventArgs e)
+        {
+            Ingresso ingresso = new Ingresso(usuario);
+            ingresso.ShowDialog();
         }
     }
 }

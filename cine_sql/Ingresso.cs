@@ -12,9 +12,25 @@ namespace cine_sql
 {
     public partial class Ingresso : Form
     {
-        public Ingresso()
+        Model.Usuario usuario;
+        int idSelecionado = 0;
+
+        public Ingresso(Model.Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+            AtualizarDgv();
+        }
+        public void AtualizarDgv()
+        {
+            Model.Ingresso ingresso = new Model.Ingresso();
+            // Mostrar as informações do bd no DataGridView
+            dgvIngressos.DataSource = ingresso.Listar();
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

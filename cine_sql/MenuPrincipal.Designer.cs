@@ -49,6 +49,7 @@
             this.btnSessoes.TabIndex = 6;
             this.btnSessoes.Text = "Sessões";
             this.btnSessoes.UseVisualStyleBackColor = false;
+            this.btnSessoes.Click += new System.EventHandler(this.btnSessoes_Click);
             // 
             // btnIngressos
             // 
@@ -62,6 +63,7 @@
             this.btnIngressos.TabIndex = 5;
             this.btnIngressos.Text = "Ingressos";
             this.btnIngressos.UseVisualStyleBackColor = false;
+            this.btnIngressos.Click += new System.EventHandler(this.btnIngressos_Click);
             // 
             // lblTituloMenuPrincipal
             // 
