@@ -93,6 +93,16 @@ namespace cine_sql.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ingressos__2_ {
+            get {
+                object obj = ResourceManager.GetObject("ingressos (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_avatar {
             get {
                 object obj = ResourceManager.GetObject("login-avatar", resourceCulture);

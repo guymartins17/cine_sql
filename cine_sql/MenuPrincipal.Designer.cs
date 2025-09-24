@@ -89,7 +89,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::cine_sql.Properties.Resources.cinema;
+            this.pictureBox1.Image = global::cine_sql.Properties.Resources.ingressos__2_;
             this.pictureBox1.Location = new System.Drawing.Point(182, 80);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 67);

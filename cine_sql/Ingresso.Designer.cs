@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ingresso));
             this.dgvSessoes = new System.Windows.Forms.DataGridView();
             this.dgvIngressos = new System.Windows.Forms.DataGridView();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.grbInformacoes = new System.Windows.Forms.GroupBox();
-            this.lblQuantidade = new System.Windows.Forms.Label();
-            this.txbQtdIngressos = new System.Windows.Forms.TextBox();
             this.btnCadastrarIngressos = new System.Windows.Forms.Button();
+            this.txbQtdIngressos = new System.Windows.Forms.TextBox();
+            this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblTituloIngressos = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSessoes)).BeginInit();
@@ -52,6 +53,7 @@
             this.dgvSessoes.Name = "dgvSessoes";
             this.dgvSessoes.Size = new System.Drawing.Size(320, 182);
             this.dgvSessoes.TabIndex = 0;
+            this.dgvSessoes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSessoes_CellClick);
             // 
             // dgvIngressos
             // 
@@ -61,6 +63,7 @@
             this.dgvIngressos.Name = "dgvIngressos";
             this.dgvIngressos.Size = new System.Drawing.Size(639, 182);
             this.dgvIngressos.TabIndex = 2;
+            this.dgvIngressos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngressos_CellClick);
             // 
             // dgvUsuarios
             // 
@@ -85,24 +88,6 @@
             this.grbInformacoes.TabStop = false;
             this.grbInformacoes.Text = "Informações";
             // 
-            // lblQuantidade
-            // 
-            this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidade.Location = new System.Drawing.Point(7, 39);
-            this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(148, 18);
-            this.lblQuantidade.TabIndex = 0;
-            this.lblQuantidade.Text = "Quantidade Ingresso:";
-            // 
-            // txbQtdIngressos
-            // 
-            this.txbQtdIngressos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbQtdIngressos.Location = new System.Drawing.Point(161, 31);
-            this.txbQtdIngressos.Name = "txbQtdIngressos";
-            this.txbQtdIngressos.Size = new System.Drawing.Size(56, 31);
-            this.txbQtdIngressos.TabIndex = 1;
-            // 
             // btnCadastrarIngressos
             // 
             this.btnCadastrarIngressos.FlatAppearance.BorderSize = 2;
@@ -115,6 +100,25 @@
             this.btnCadastrarIngressos.TabIndex = 2;
             this.btnCadastrarIngressos.Text = "Cadastrar";
             this.btnCadastrarIngressos.UseVisualStyleBackColor = true;
+            this.btnCadastrarIngressos.Click += new System.EventHandler(this.btnCadastrarIngressos_Click);
+            // 
+            // txbQtdIngressos
+            // 
+            this.txbQtdIngressos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbQtdIngressos.Location = new System.Drawing.Point(161, 31);
+            this.txbQtdIngressos.Name = "txbQtdIngressos";
+            this.txbQtdIngressos.Size = new System.Drawing.Size(56, 31);
+            this.txbQtdIngressos.TabIndex = 1;
+            // 
+            // lblQuantidade
+            // 
+            this.lblQuantidade.AutoSize = true;
+            this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantidade.Location = new System.Drawing.Point(7, 39);
+            this.lblQuantidade.Name = "lblQuantidade";
+            this.lblQuantidade.Size = new System.Drawing.Size(148, 18);
+            this.lblQuantidade.TabIndex = 0;
+            this.lblQuantidade.Text = "Quantidade Ingresso:";
             // 
             // lblTituloIngressos
             // 
@@ -149,6 +153,7 @@
             this.Controls.Add(this.dgvIngressos);
             this.Controls.Add(this.dgvSessoes);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "Ingresso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -17,7 +17,7 @@ namespace cine_sql.Model
 
         public DataTable Listar()
         {
-            string comando = "SELECT * FROM ingressos";
+            string comando = "SELECT * FROM view_ingressos";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
@@ -28,13 +28,14 @@ namespace cine_sql.Model
         }
         public bool Cadastrar()
         {
-            string comando = "INSERT INTO ingressos (id_sessao, qtd_ingresso) VALUES " +
-                "(@id_sessao, @qtd_ingresso)";
+            string comando = "INSERT INTO ingressos (id_usuario, id_sessao, qtd_ingresso) VALUES " +
+                "(@id_usuario, @id_sessao, @qtd_ingresso)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
-            cmd.Parameters.AddWithValue("id_sessao", IdSessao);
+            cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
+            cmd.Parameters.AddWithValue("@id_sessao", IdSessao);
             cmd.Parameters.AddWithValue("@qtd_ingresso", QtdIngresso);
 
             cmd.Prepare();
